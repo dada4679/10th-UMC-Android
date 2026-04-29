@@ -13,7 +13,7 @@ abstract class ProductDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao
 
     companion object {
-        @Volatile
+        @Volatile //이 변수의 값은 cpu캐시말고 메인 메모리에서 직접 읽고 쓰겠다.
         private var INSTANCE: ProductDatabase?=null
 
         fun getDatabase(context: Context): ProductDatabase {

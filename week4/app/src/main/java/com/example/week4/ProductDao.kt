@@ -26,9 +26,9 @@ interface ProductDao {
     //장바구니 상품 조회
     @Query("SELECT * FROM ProductTable WHERE isInBag=1")
     fun getInBagProducts(): List<ProductEntity>
-    //????????????????????
+//
     @Query("SELECT * FROM ProductTable WHERE id = :productId")
-    fun getProductById(productId: Int): ProductEntity?
+    fun getProductId(productId: Int): ProductEntity?
 
     @Query("UPDATE ProductTable SET isWishlisted = :isWishlisted WHERE id = :productId")
     fun updateWishlistState(productId: Int, isWishlisted: Boolean)
@@ -39,5 +39,4 @@ interface ProductDao {
     @Query("SELECT * FROM ProductTable WHERE category = :category")
     fun getProductsByCategory(category: String): List<ProductEntity>
 
-    //?????????????????????
 }
