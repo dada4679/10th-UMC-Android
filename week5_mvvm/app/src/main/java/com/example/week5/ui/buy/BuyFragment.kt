@@ -7,10 +7,6 @@ import com.example.week5.R
 import com.example.week5.databinding.FragmentBuyBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-/**
- * 탭만 구성하므로 별도 ViewModel 없이 동작합니다.
- * 데이터는 자식 Fragment(BuyItemFragment)가 자기 ViewModel로 처리합니다.
- */
 class BuyFragment : Fragment(R.layout.fragment_buy) {
 
     private var _binding: FragmentBuyBinding? = null
