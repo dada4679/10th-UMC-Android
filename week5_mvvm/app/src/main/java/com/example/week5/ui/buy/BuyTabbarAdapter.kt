@@ -9,9 +9,9 @@ class BuyTabbarAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> BuyItemFragment.newInstance(null)      // 전체
-            1 -> BuyItemFragment.newInstance("tops")    // Tops & T-Shirts
-            2 -> BuyItemFragment.newInstance("sale")    // Sale
+            0 -> BuyItemFragment.newInstance(null)
+            1 -> BuyItemFragment.newInstance("tops")
+            2 -> BuyItemFragment.newInstance("sale")
             else -> BuyItemFragment.newInstance(null)
         }
     }

@@ -9,10 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 
-/**
- * 앱 시작 시 시드 데이터를 한 번만 삽입하는 책임을 가진 ViewModel.
- * 기존 MainActivity.insertInitialProducts() 로직을 옮겨왔습니다.
- */
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: LocalProductRepository

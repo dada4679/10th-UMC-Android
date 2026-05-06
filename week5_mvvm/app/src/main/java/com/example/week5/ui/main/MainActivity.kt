@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
         private set
 
-    // ✅ Factory 없이 by viewModels() 한 줄로 ViewModel 주입
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

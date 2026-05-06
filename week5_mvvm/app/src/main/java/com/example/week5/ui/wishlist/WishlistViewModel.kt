@@ -22,7 +22,6 @@ class WishlistViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            // Flow를 구독하기 때문에 onResume에서 다시 읽지 않아도 자동 갱신됩니다.
             repository.getWishlistStream().collect { items ->
                 _uiState.update { it.copy(items = items) }
             }

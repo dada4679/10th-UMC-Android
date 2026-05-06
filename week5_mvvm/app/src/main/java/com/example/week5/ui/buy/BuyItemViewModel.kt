@@ -13,10 +13,6 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-/**
- * BuyItemFragment(탭별 상품 목록)용 ViewModel.
- * category 인자에 따라 전체/카테고리 목록을 노출합니다.
- */
 @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class BuyItemViewModel @Inject constructor(
@@ -44,12 +40,10 @@ class BuyItemViewModel @Inject constructor(
         }
     }
 
-    /** Fragment에서 newInstance 시 전달받은 category를 ViewModel에 알려줍니다. */
     fun setCategory(category: String?) {
         categoryFlow.value = category
     }
 
-    /** 위시리스트 상태 토글 — Flow가 자동으로 UI를 갱신합니다. */
     fun toggleWishlist(item: ProductEntity) {
         viewModelScope.launch {
             repository.toggleWishlist(item.id, !item.isWishlisted)
