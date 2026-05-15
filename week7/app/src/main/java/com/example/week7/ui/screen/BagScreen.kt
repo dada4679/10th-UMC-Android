@@ -23,5 +23,51 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.week7.R
+import com.example.week7.navigation.AppDestination
 
 @Composable
+fun BagScreen(
+    onBuyClick: () -> Unit //onBuyClick이라는 행동을 외부에서 받아서 사용하겠다.
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    )
+    {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(30.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.bagcircle),
+                contentDescription = "장바구니사진",
+                modifier = Modifier.size(50.dp)
+            )
+
+            Spacer(modifier = Modifier.height(25.dp))
+
+            Text(
+                text = "장바구니가 비어 있습니다.",
+                color = Color.Black,
+                fontSize = 20.sp,
+            )
+            Text(
+                text = "제품을 추가하면 여기에 표시됩니다.",
+                color = Color.Black,
+                fontSize = 20.sp,
+            )
+
+            Spacer(modifier = Modifier.height(400.dp))
+
+            Button(
+                onClick = onBuyClick
+            ) {
+                Text(text = "구매하기")
+            }
+        }
+    }
+}

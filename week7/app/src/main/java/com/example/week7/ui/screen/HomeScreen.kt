@@ -24,7 +24,7 @@ fun HomeScreen() {
     Column(
         modifier= Modifier
             .fillMaxSize()
-            .padding(30.dp)
+            .padding(20.dp)
     ){
         Text(
             text="Discovery",

@@ -16,17 +16,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.week7.navigation.BottomTab
 
-@Preview()
 @Composable
 fun AppBottomBar(
     selected: BottomTab,
-    onTabSelected: (BottomTab) -> Unit,
+    onTabSelected: (BottomTab) -> Unit,//onTabSelected를 외부에서 받아와서 사용하겠다.
     ) {
-        Row(modifier = Modifier.fillMaxWidth().navigationBarsPadding()) {
+        Row(
+            modifier = Modifier
+            .fillMaxWidth()
+            .navigationBarsPadding()) {
             BottomTab.entries.forEach { tab ->
                 val tint = if (tab == selected) Color.Black else Color.Gray
                 Column(
-                    modifier = Modifier.weight(1f).clickable { onTabSelected(tab) },
+                    modifier = Modifier.weight(1f)
+                    .clickable { onTabSelected(tab) },
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Icon(painterResource(tab.iconRes), tab.label, tint = tint)

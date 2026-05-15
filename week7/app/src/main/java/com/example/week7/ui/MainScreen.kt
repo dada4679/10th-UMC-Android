@@ -55,7 +55,8 @@ fun MainScreen() {
             composable<AppDestination.Wishlist> { WishlistScreen() }
             composable<AppDestination.Bag> {
                 BagScreen(
-                    onOrderClick = { navController.navigateTab(AppDestination.Buy) }
+                    onBuyClick = {
+                        navController.navigate(AppDestination.Buy) }
                 )
             }
             composable<AppDestination.Profile> { ProfileScreen() }
